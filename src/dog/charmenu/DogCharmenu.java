@@ -19,12 +19,16 @@ public class DogCharmenu extends BasicGameState implements BasicInterface {
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame game, Graphics g) throws SlickException {
-		g.drawString("CHAR", 300, 300);
+		g.drawString("LOGIN SUCCESFUL; PRESS ENTER", 300, 300);
 	}
 
 	@Override
 	public void update(GameContainer gc, StateBasedGame game, int delta) throws SlickException {
 		Input in = gc.getInput();
+		
+		if(in.isKeyPressed(Input.KEY_ENTER))
+			//ENTER NEXT GAME STATE
+			game.enterState(GAME_STATE);
 		
 		if(in.isKeyPressed(Input.KEY_ESCAPE))
 			System.exit(0);

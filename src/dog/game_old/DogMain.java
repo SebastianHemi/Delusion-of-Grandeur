@@ -1,13 +1,10 @@
-package dog.main;
+package dog.game_old;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-import dog.charmenu.DogCharmenu;
-import dog.game_old.DelusionOfGrandeur;
-import dog.login.DogLogin;
 
 public class DogMain extends StateBasedGame implements BasicInterface {
 
@@ -24,9 +21,9 @@ public class DogMain extends StateBasedGame implements BasicInterface {
 			
 			//Configure
 			app.setDisplayMode(1280, 720, false);
-			app.setTargetFrameRate(60);
-//			app.setShowFPS(false);
 			
+			//fps
+//			app.setTargetFrameRate(240);
 			//Starten
 			app.start();	
 			
@@ -36,9 +33,7 @@ public class DogMain extends StateBasedGame implements BasicInterface {
 	}
 
 	@Override
-	public void initStatesList(GameContainer gc) throws SlickException {
-		addState(new DogLogin());
-		addState(new DogCharmenu());
+	public void initStatesList(GameContainer arg0) throws SlickException {
 		addState(new DelusionOfGrandeur("title"));
 	}
 }
